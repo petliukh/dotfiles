@@ -39,21 +39,15 @@ local on_attach = function(client, bufnr)
 end
 
 local auto_setup_servers = {
-	clangd = lspconfig.clangd,
-	pyright = lspconfig.pyright,
-	omnisharp = lspconfig.omnisharp,
-	cmake = lspconfig.cmake,
-	jsonls = lspconfig.jsonls,
-	yamlls = lspconfig.yamlls,
-	dockerls = lspconfig.dockerls,
-	bashls = lspconfig.bashls,
-	jdtls = lspconfig.jdtls,
-	html = lspconfig.html,
-	cssls = lspconfig.cssls,
-	prolog_ls = lspconfig.prolog_ls,
+	lspconfig.clangd,
+	lspconfig.pyright,
+	lspconfig.jsonls,
+	lspconfig.yamlls,
+	lspconfig.bashls,
+	lspconfig.texlab,
 }
 
-for _, server in pairs(auto_setup_servers) do
+for _, server in ipairs(auto_setup_servers) do
 	server.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
@@ -83,42 +77,6 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-lspconfig.texlab.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern(".texproj"),
-	settings = {
-		texlab = {
-			rootDirectory = ".texproj",
-			build = {
-				executable = "pdflatex",
-				args = { "-output-directory=build" },
-				onSave = false,
-				forwardSearchAfter = false,
-			},
-			auxDirectory = "build",
-			forwardSearch = {
-				executable = nil,
-				args = {},
-			},
-			chktex = {
-				onOpenAndSave = false,
-				onEdit = false,
-			},
-			diagnosticsDelay = 300,
-			latexFormatter = "latexindent",
-			latexindent = {
-				["local"] = nil, -- local is a reserved keyword
-				modifyLineBreaks = false,
-			},
-			bibtexFormatter = "texlab",
-			formatterLineLength = 80,
-		},
-	},
-})
-
-vim.filetype.add({ extension = { pro = 'prolog' } })
-
 ------------ Border setup ------------
 local setup_floating_border = function(border)
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -130,7 +88,6 @@ local setup_floating_border = function(border)
 	vim.diagnostic.config({
 		float = { border = border },
 	})
-
 	require("lspconfig.ui.windows").default_options = {
 		border = border,
 	}

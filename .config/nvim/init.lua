@@ -1,5 +1,5 @@
-require("petliukh.packer")
 require("petliukh.settings")
+require("petliukh.lazy")
 require("petliukh.mason")
 require("petliukh.lspconfig")
 require("petliukh.formatter")

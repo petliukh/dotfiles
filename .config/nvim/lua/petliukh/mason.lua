@@ -1,5 +1,5 @@
 local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
+local mason_installer = require("mason-tool-installer")
 
 mason.setup({
 	ui = {
@@ -14,20 +14,21 @@ mason.setup({
 	},
 })
 
-mason_lspconfig.setup({
+mason_installer.setup({
 	ensure_installed = {
+		-- LSP
 		"lua_ls",
 		"clangd",
 		"pyright",
-		"omnisharp",
-		"cmake",
 		"jsonls",
 		"yamlls",
-		"dockerls",
 		"bashls",
 		"texlab",
-		"jdtls",
-		"html",
-		"cssls",
+
+		-- Formatters
+		"stylua",
+		"black",
+		"clang-format",
+		"latexindent",
 	},
 })

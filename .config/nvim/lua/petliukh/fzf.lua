@@ -8,9 +8,6 @@ fzf.setup({
 		win_width = 1,
 		win_row = 0,
 		win_col = 0,
-		preview = {
-			hidden = "nohidden",
-		},
 	},
 	keymap = {
 		builtin = {
@@ -49,7 +46,7 @@ fzf.setup({
 		bat = {
 			cmd = "bat",
 			args = "--style=numbers,changes --color always",
-			theme = "Solarized (dark)", -- bat preview theme (bat --list-themes)
+			theme = "Solarized (light)", -- bat preview theme (bat --list-themes)
 			config = nil, -- nil uses $BAT_CONFIG_PATH
 		},
 	},
