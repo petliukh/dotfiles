@@ -5,7 +5,3 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CONFIG_DIRS=/etc/xdg
 export EDITOR="nvim"
 export VISUAL="nvim"
-export CARGO_HOME=$XDG_DATA_HOME/cargo
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export FZF_DEFAULT_COMMAND="find ."
-export PATH="$HOME/.local/share/cargo/bin:$PATH"
