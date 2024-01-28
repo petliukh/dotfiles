@@ -10,7 +10,8 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
-. $HOME/.config/shell-agnostic/profile.sh
+. $HOME/.config/shell-agnostic/sys-vars.sh
+. $HOME/.config/shell-agnostic/common-vars.sh
 export PATH
 export HISTFILE=$XDG_STATE_HOME/bash/history
 

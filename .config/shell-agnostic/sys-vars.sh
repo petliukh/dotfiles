@@ -5,3 +5,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CONFIG_DIRS=/etc/xdg
 export EDITOR="nvim"
 export VISUAL="nvim"
+export QT_QPA_PLATFORMTHEME="gnome"
+export QT_WAYLAND_DECORATION="adwaita"
+export QT_STYLE_OVERRIDE="Adwaita-Dark"

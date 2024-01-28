@@ -1,5 +1,6 @@
 . $HOME/.config/shell-agnostic/aliases.sh
 . $ZDOTDIR/prompt.sh
+. $HOME/.config/shell-agnostic/common-vars.sh
 
 autoload -U compinit; compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 _comp_options+=(globdots)

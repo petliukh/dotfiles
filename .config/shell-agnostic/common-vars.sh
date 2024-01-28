@@ -5,3 +5,4 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export PATH="$HOME/.local/share/cargo/bin:$PATH"
 export PATH="$HOME/.local/share/adb-fastboot/platform-tools:$PATH"
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
